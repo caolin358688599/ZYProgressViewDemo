@@ -15,6 +15,7 @@
 		090C400B1B8173E100879951 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 090C400A1B8173E100879951 /* Images.xcassets */; };
 		090C400E1B8173E100879951 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 090C400C1B8173E100879951 /* LaunchScreen.xib */; };
 		090C401A1B8173E100879951 /* ZYProgressViewTestTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 090C40191B8173E100879951 /* ZYProgressViewTestTests.m */; };
+		090C40251B8173FB00879951 /* ZYProgressView.m in Sources */ = {isa = PBXBuildFile; fileRef = 090C40241B8173FB00879951 /* ZYProgressView.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -42,6 +43,8 @@
 		090C40131B8173E100879951 /* ZYProgressViewTestTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ZYProgressViewTestTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		090C40181B8173E100879951 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		090C40191B8173E100879951 /* ZYProgressViewTestTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ZYProgressViewTestTests.m; sourceTree = "<group>"; };
+		090C40231B8173FB00879951 /* ZYProgressView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZYProgressView.h; sourceTree = "<group>"; };
+		090C40241B8173FB00879951 /* ZYProgressView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZYProgressView.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -92,6 +95,8 @@
 				090C400C1B8173E100879951 /* LaunchScreen.xib */,
 				090C40011B8173E100879951 /* ZYProgressViewTest.xcdatamodeld */,
 				090C3FFA1B8173E100879951 /* Supporting Files */,
+				090C40231B8173FB00879951 /* ZYProgressView.h */,
+				090C40241B8173FB00879951 /* ZYProgressView.m */,
 			);
 			path = ZYProgressViewTest;
 			sourceTree = "<group>";
@@ -225,6 +230,7 @@
 				090C40001B8173E100879951 /* AppDelegate.m in Sources */,
 				090C40031B8173E100879951 /* ZYProgressViewTest.xcdatamodeld in Sources */,
 				090C40061B8173E100879951 /* ViewController.m in Sources */,
+				090C40251B8173FB00879951 /* ZYProgressView.m in Sources */,
 				090C3FFD1B8173E100879951 /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
