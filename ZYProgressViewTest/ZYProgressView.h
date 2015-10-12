@@ -77,7 +77,10 @@
  */
 - (UIFont *)fontForTitleViewInProgressView:(ZYProgressView *)progressView;
 
-
+/**
+ *  设置当前显示为粗体的字体，默认为11
+ */
+- (UIFont *)boldFontForTitleViewInProgressView:(ZYProgressView *)progressView;
 @end
 
 @interface ZYProgressView : UIView
@@ -98,7 +101,6 @@
 
 /**
  *  刷新数据，当需要动态添加一个进度时，可重新刷新数据
- *  如果是直接是在xib/storyboard里面创建，那么创建之后，在设置好dataSource和delegate之后，请马上调用此方法刷新数据
  */
 - (void)reloadData;
 @end

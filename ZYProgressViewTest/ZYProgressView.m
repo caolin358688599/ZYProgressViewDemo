@@ -16,14 +16,16 @@
 
 #define DefaultRadius  10
 #define DefaultFont  [UIFont systemFontOfSize:11.0]
-#define DefaultCircleColor [UIColor colorWithRed:218 / 255.0 green:208 / 255.0 blue:209 / 255.0 alpha:1];
-#define DefaultTitleColor [UIColor colorWithRed:218 / 255.0 green:208 / 255.0 blue:209 / 255.0 alpha:1];
-#define DefaultHighCircleColor [UIColor colorWithRed:251.0 / 255.0 green:0 blue:52.0 / 255.0 alpha:1];
-#define DefaultHighTitleColor [UIColor colorWithRed:102.0 / 255.0 green:102.0 / 255.0 blue:102.0 / 255.0 alpha:1];
+#define DefaultBoldFont [UIFont boldSystemFontOfSize:11.0]
+#define DefaultCircleColor [UIColor colorWithRed:218 / 255.0 green:208 / 255.0 blue:209 / 255.0 alpha:1]
+#define DefaultTitleColor [UIColor colorWithRed:218 / 255.0 green:208 / 255.0 blue:209 / 255.0 alpha:1]
+#define DefaultHighCircleColor [UIColor colorWithRed:251.0 / 255.0 green:0 blue:52.0 / 255.0 alpha:1]
+#define DefaultHighTitleColor [UIColor blackColor]
 @implementation ZYProgressView
 
 - (NSMutableArray *)circles
 {
+    
     if (!_circles) {
         _circles = [NSMutableArray array];
     }
@@ -113,7 +115,7 @@
     
     CGFloat marginLeft = 15;
     CGFloat marginRight = 15;
-    CGFloat marginTop = 25;
+    CGFloat marginTop = 18;
     CGFloat marginRow = 12;
     CGFloat radiusOfCircle = [self radiusForCircle];
     CGFloat lineHeight = 2;
@@ -196,6 +198,14 @@
     return DefaultFont;
 }
 
+- (UIFont *)bodyFontForTitle
+{
+    if ([self.delegate respondsToSelector:@selector(boldFontForTitleViewInProgressView:)]) {
+        return [self.delegate boldFontForTitleViewInProgressView:self];
+    }
+    return DefaultBoldFont;
+}
+
 - (UIColor *)circleNormalColor
 {
     if ([self.delegate respondsToSelector:@selector(colorForCircleViewInProgressView:)]) {
@@ -236,6 +246,7 @@
     for (int i = 0; i < numberOfProgress; i++) {
         UILabel *label = self.titles[i];
         label.textColor = colorOfTitle;
+        label.font = [self fontForTitle];
         
         UIView *circleView = self.circles[i];
         circleView.backgroundColor = colorOfCircle;
@@ -257,6 +268,12 @@
             UIView *lineView = self.lines[i - 1];
             lineView.backgroundColor = [self circleHighColor];
         }
+        
+        if (i == currentProgress - 1) {
+            label.textColor = [self titleHighColor];
+            label.font = [self bodyFontForTitle];
+            
+        }
     }
 }
 
@@ -265,3 +282,4 @@
     [self reloadData];
 }
 @end
+
